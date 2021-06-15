@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 8</title>
+    <link rel="stylesheet" href="question.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="progress-wrapper">
+        <div class="progress-bar"></div>
+        <div class="progress-gauge gauge8"></div>
+      </div>
+      <div class="progress-wrapper">
+        <div class="progress"><i class="fas fa-circle"></i></div>
+        <div class="progress"><i class="fas fa-circle"></i></div>
+        <div class="progress"><i class="fas fa-circle"></i></div>
+        <div class="progress"><i class="fas fa-circle"></i></div>
+        <div class="progress"><i class="fas fa-circle"></i></div>
+        <div class="progress"><i class="fas fa-circle"></i></div>
+        <div class="progress"><i class="fas fa-circle"></i></div>
+        <div class="progress"><i class="far fa-circle"></i></div>
+        <div class="progress"><i class="far fa-circle"></i></div>
+        <div class="progress"><i class="far fa-circle"></i></div>
+      </div>
+      <div class="question_bottom">
+        <div class="question-title">똑같은 제품을 실수로 또 샀을때</div>
+        <div class="question-answers">
+          <div class="answer" onclick="chooseJ()">
+            용납할 수없어 반품비 물고
+          </div>
+          <div class="answer" onclick="chooseP()">
+            맘에 드는 거니까 괜찮아, keep
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      temp = location.href.split("?");
+      let scores = temp[1].split(",");
+      scores.map((element, index) => {
+        scores[index] = parseInt(element);
+      });
+      function chooseJ() {
+        scores[3] += 1;
+        location.href = "nine.html" + "?" + scores;
+      }
+      function chooseP() {
+        scores[3] += 1;
+        location.href = "nine.html" + "?" + scores;
+      }
+    </script>
+  </body>
+</html>

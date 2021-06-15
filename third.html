@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 3</title>
+    <link rel="stylesheet" href="question.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="progress-wrapper">
+        <div class="progress-bar"></div>
+        <div class="progress-gauge gauge3"></div>
+      </div>
+      <div class="question_bottom">
+        <div class="question-title">
+          완전 맘에 드는 원피스인데,<br />
+          브랜드 로고로 뒤덮였...
+        </div>
+        <div class="question-answers">
+          <div class="answer" onclick="chooseS()">
+            소재는 어떨지 만져보고 사야지
+          </div>
+          <div class="answer" onclick="chooseN()">일단 지르고 반품해 볼까?</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      temp = location.href.split("?");
+      let scores = temp[1].split(",");
+      scores.map((element, index) => {
+        scores[index] = parseInt(element);
+      });
+
+      function chooseN() {
+        scores[1] -= 1;
+        location.href = "forth.html" + "?" + scores;
+      }
+      function chooseS() {
+        scores[1] += 1;
+        location.href = "forth.html" + "?" + scores;
+      }
+    </script>
+  </body>
+</html>

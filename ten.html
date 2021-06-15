@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 10</title>
+    <link rel="stylesheet" href="question.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="progress-wrapper">
+        <div class="progress-bar"></div>
+        <div class="progress-gauge gauge10"></div>
+      </div>
+      <div class="question_bottom">
+        <div class="question-title">
+          아이쇼핑하다가 맘에 드는<br />
+          잇템을 봤을 때
+        </div>
+        <div class="question-answers">
+          <div class="answer" onclick="chooseJ()">
+            흠. 일단 장바구니행, 301번째 아이템
+          </div>
+          <div class="answer" onclick="chooseP()">
+            바로바로 사야지, 텅텅 비어있다
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      temp = location.href.split("?");
+      let scores = temp[1].split(",");
+      scores.map((element, index) => {
+        scores[index] = parseInt(element);
+      });
+      function chooseJ() {
+        scores[3] -= 1;
+        location.href = "results.html" + "?" + scores;
+      }
+      function chooseP() {
+        scores[3] += 1;
+        location.href = "results.html" + "?" + scores;
+      }
+    </script>
+  </body>
+</html>

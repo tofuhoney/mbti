@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 9</title>
+    <link rel="stylesheet" href="question.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="progress-wrapper">
+        <div class="progress-bar"></div>
+        <div class="progress-gauge gauge9"></div>
+      </div>
+      <div class="question_bottom">
+        <div class="question-title">쇼핑하기 전</div>
+        <div class="question-answers">
+          <div class="answer" onclick="chooseJ()">뭐살지 미리 정해둔다</div>
+          <div class="answer" onclick="chooseP()">가보면 맘에 드는게 있겠지</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      temp = location.href.split("?");
+      let scores = temp[1].split(",");
+      scores.map((element, index) => {
+        scores[index] = parseInt(element);
+      });
+      function chooseP() {
+        scores[3] -= 1;
+        location.href = "ten.html" + "?" + scores;
+      }
+      function chooseJ() {
+        scores[3] += 1;
+        location.href = "ten.html" + "?" + scores;
+      }
+    </script>
+  </body>
+</html>

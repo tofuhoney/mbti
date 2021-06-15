@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 5</title>
+    <link rel="stylesheet" href="question.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="progress-wrapper">
+        <div class="progress-bar"></div>
+        <div class="progress-gauge gauge5"></div>
+      </div>
+      <div class="question_bottom">
+        <div class="question-title">
+          나 10번만에 드로우 성공했어!!<br />
+          친구의 말에 반응은
+        </div>
+        <div class="question-answers">
+          <div class="answer" onclick="chooseT()">오 대박 모델명이 뭐야?</div>
+          <div class="answer" onclick="chooseF()">
+            와 그래도 10번은 해야 당첨되는구나
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      temp = location.href.split("?");
+      let scores = temp[1].split(",");
+      scores.map((element, index) => {
+        scores[index] = parseInt(element);
+      });
+
+      function chooseT() {
+        scores[2] += 1;
+        location.href = "sixth.html" + "?" + scores;
+      }
+      function chooseF() {
+        scores[2] -= 1;
+        location.href = "sixth.html" + "?" + scores;
+      }
+    </script>
+  </body>
+</html>

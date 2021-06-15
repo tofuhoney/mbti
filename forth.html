@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Question 4</title>
+    <link rel="stylesheet" href="question.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="progress-wrapper">
+        <div class="progress-bar"></div>
+        <div class="progress-gauge gauge4"></div>
+      </div>
+      <div class="question_bottom">
+        <div class="question-title">
+          한정판 에어팟 케이스 출시!!!<br />
+          에어팟이 없는 나는
+        </div>
+        <div class="question-answers">
+          <div class="answer" onclick="chooseS()">에어팟부터 사야지...</div>
+          <div class="answer" onclick="chooseN()">
+            지나간 케이스는 돌아오지 않아<br />
+            어짜피 살거니까 당장!!
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      temp = location.href.split("?");
+      let scores = temp[1].split(",");
+      scores.map((element, index) => {
+        scores[index] = parseInt(element);
+      });
+      function chooseN() {
+        scores[1] -= 2;
+        location.href = "fifth.html" + "?" + scores;
+      }
+      function chooseS() {
+        scores[1] += 2;
+        location.href = "fifth.html" + "?" + scores;
+      }
+    </script>
+  </body>
+</html>
